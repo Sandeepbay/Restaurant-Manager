@@ -1,0 +1,10 @@
+{% extends 'restaurant/layout.html' %}
+
+    {% block body %}
+        <h1>List of Restaurants</h1>
+        <ul>
+            {% for restaurant in restaurants %}
+                <li>{{ restaurant }}</li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
