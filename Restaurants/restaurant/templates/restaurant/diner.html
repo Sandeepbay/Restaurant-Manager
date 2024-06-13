@@ -16,5 +16,13 @@
     </ul>
     {% endfor %}
         <br>
+    <h3>Add Customers & Reviews</h3>
+    <form action="{% url 'book' restaurant.id %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Enter Name"><br>
+        <input type="text" name="order" placeholder="Enter Order"><br>
+        <input type="text" name="review" placeholder="Enter Review"><br>
+        <input type="submit" value="Submit Form">
+    </form>
     <a href="{% url 'index' %}">Back To Restaurants</a>
 {% endblock %}
