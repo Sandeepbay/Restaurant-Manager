@@ -11,5 +11,6 @@ def index(request):
 def restaurant(request , restaurant_id):
     restaurant = Restaurant.objects.get(pk=restaurant_id)
     return render(request , 'restaurant/diner.html' , {
-        "restaurant": restaurant
+        "restaurant": restaurant,
+        "peoples" : restaurant.people.all()
     })

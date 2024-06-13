@@ -7,5 +7,14 @@
         <li>Rating: {{ restaurant.rating }}</li>
         <li>Reservation: {{ restaurant.reservation }}</li>
     </ul>
+    <h1>Customers</h1>
+    {% for people in peoples %}
+    <ul>
+        <li>Name: {{ people.name }}</li>
+        <li>Order: {{ people.order }}</li>
+        <li>Review: {{ people.review }}</li>
+    </ul>
+    {% endfor %}
+        <br>
     <a href="{% url 'index' %}">Back To Restaurants</a>
 {% endblock %}

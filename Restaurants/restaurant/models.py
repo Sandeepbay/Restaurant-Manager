@@ -10,4 +10,15 @@ class Restaurant(models.Model):
 
     def __str__(self):
         return f"{self.id}: {self.name}"
+    
+class People(models.Model):
+    name = models.CharField(max_length=32 , blank=False)
+    order = models.CharField(max_length=32 , blank=False)
+    review = models.CharField(max_length=50)
+    conneection = models.ManyToManyField(Restaurant , blank=False , related_name="people")
+
+    def __str__(self):
+        return f"{self.id} : {self.name} - {self.order}"
+
+
 
